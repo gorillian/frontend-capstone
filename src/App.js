@@ -29,17 +29,31 @@
 // Don't limit yourselves.
 // HAVE FUN!!!
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import NavBar from "./components/nav/NavBar";
+import aboutPage from "./components/pages/AboutPage";
+import Home from "./components/nav/Home";
+import NotFound from "./components/pages/NotFound";
+import WeatherWidget from "./components/pages/Weather";
+import SwapiQuery from "./components/pages/SwapiQuery";
 function App() {
   return (
     <div className="App">
-      <h1>Hello from App</h1>
-      <Router>
-        <div>
-          <Route></Route>
-        </div>
-      </Router>
+      <BrowserRouter>
+        <Route path="*" component={NavBar} />
+
+        <Switch>
+          <Route exact path="/" render={Home} />
+          <Route path="/about" component={aboutPage} />
+          <Route path="/weather" component={WeatherWidget} />
+          <Route path="/swapi" component={SwapiQuery} />
+          {/* <Route path="/widgone" component={WidgetOne}/>
+          <Route path="/widgtwo" component={WidgetTwo}/>
+          <Route path="/widgthree" component={WidgetThree}/> */}
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
