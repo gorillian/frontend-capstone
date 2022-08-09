@@ -9,8 +9,8 @@ export default function Home() {
       <div className="widget-grid"></div>
       <Link to="/weather">Weather</Link>
       <Link to="/swapi">SWAPI</Link>
-      {/* <Link to="/widgone">First</Link>
-      <Link to="/widgtwo">Second</Link>
+      <Link to="/map">Map</Link>
+      {/* <Link to="/widgtwo">Second</Link>
       <Link to="/widgthree">Third</Link> */}
     </div>
   );

@@ -37,6 +37,7 @@ import Home from "./components/nav/Home";
 import NotFound from "./components/pages/NotFound";
 import WeatherWidget from "./components/pages/Weather";
 import SwapiQuery from "./components/pages/SwapiQuery";
+import Map from "./components/pages/Map";
 
 function App() {
   return (
@@ -49,8 +50,8 @@ function App() {
           <Route path="/about" component={aboutPage} />
           <Route path="/weather" component={WeatherWidget} />
           <Route path="/swapi" component={SwapiQuery} />
-          {/* <Route path="/widgone" component={WidgetOne}/>
-          <Route path="/widgtwo" component={WidgetTwo}/>
+          <Route path="/map" component={Map} />
+          {/* <Route path="/widgtwo" component={WidgetTwo}/>
           <Route path="/widgthree" component={WidgetThree}/> */}
           <Route component={NotFound} />
         </Switch>
