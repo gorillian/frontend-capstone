@@ -1,16 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="widgetWrapper">
+    <div className="widget-wrapper">
       <div>
         <h1>WELCOME TO THE HOME SCREEN</h1>
       </div>
-      <NavLink to="/weather">Weather</NavLink>
-      <NavLink to="/swapi">SWAPI</NavLink>
-      {/* <NavLink to="/widgone">First</NavLink>
-      <NavLink to="/widgtwo">Second</NavLink>
-      <NavLink to="/widgthree">Third</NavLink> */}
+      <div className="widget-grid"></div>
+      <Link to="/weather">Weather</Link>
+      <Link to="/swapi">SWAPI</Link>
+      {/* <Link to="/widgone">First</Link>
+      <Link to="/widgtwo">Second</Link>
+      <Link to="/widgthree">Third</Link> */}
     </div>
   );
 }

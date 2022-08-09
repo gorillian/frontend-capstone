@@ -1,0 +1,45 @@
+h1 {
+  color: red;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  font-size: medium;
+  color: black;
+  .permanent-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.5vw;
+  }
+}
+
+.widget-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 40vh;
+  .widget-grid {
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+  }
+}

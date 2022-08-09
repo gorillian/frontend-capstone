@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <div className="navBarWrapper">
-      <div>
+    <div className="nav-bar-wrapper">
+      <div className="permanent-nav">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
       </div>

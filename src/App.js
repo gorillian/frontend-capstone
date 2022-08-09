@@ -37,6 +37,7 @@ import Home from "./components/nav/Home";
 import NotFound from "./components/pages/NotFound";
 import WeatherWidget from "./components/pages/Weather";
 import SwapiQuery from "./components/pages/SwapiQuery";
+
 function App() {
   return (
     <div className="App">
