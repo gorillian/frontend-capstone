@@ -1,4 +1,4 @@
-export default function WeatherWidget(props) {
+export default function weatherWidget(props) {
   return (
     <div className="weather-widget-wrapper">
       <div>

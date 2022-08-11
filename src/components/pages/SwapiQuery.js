@@ -1,4 +1,4 @@
-export default function SwapiQuery(props) {
+export default function swapiQuery(props) {
   return (
     <div>
       <div>

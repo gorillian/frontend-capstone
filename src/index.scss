@@ -1,13 +1,28 @@
 h1 {
   color: lightgrey;
 }
+button {
+  border: none;
+  color: white;
+  background-color: lightblue;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+}
+button:hover {
+  border: 1px black solid;
+  color: black;
+}
 .App {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border: 1px solid red;
   width: 100vw;
   height: 100vh;
+  margin-left: -10px;
+  margin-top: -8px;
 }
 a {
   text-decoration: none;
@@ -19,28 +34,70 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95vw;
+  height: 80px;
+  width: 100vw;
   font-size: medium;
+  border: 1px solid blue;
   color: black;
   background-color: lightblue;
+  margin-bottom: 5px;
   .permanent-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 7.5vw;
+    padding-left: 10px;
   }
 }
 
-.widget-wrapper {
+.widget-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 70vh;
+  border: 1px solid black;
+  .widget-grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    .one {
+      border: 1px solid black;
+      height: 200px;
+      width: 200px;
+    }
+    .two {
+      border: 1px solid black;
+    }
+    .three {
+      border: 1px solid black;
+    }
+    .four {
+      border: 1px solid black;
+    }
+  }
+}
+.image-widget-wrapper {
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40vw;
-  height: 40vh;
-  .widget-grid {
-    display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    grid-template-rows: 1fr, 1fr;
+  height: 90vh;
+  width: 100vw;
+  .image-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    img {
+      height: auto;
+      border-radius: 10px;
+      width: 100%;
+    }
   }
 }

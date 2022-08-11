@@ -28,16 +28,16 @@
 // Utilize the internet!
 // Don't limit yourselves.
 // HAVE FUN!!!
-import { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import NavBar from "./components/nav/NavBar";
 import aboutPage from "./components/pages/AboutPage";
 import Home from "./components/nav/Home";
 import NotFound from "./components/pages/NotFound";
-import WeatherWidget from "./components/pages/Weather";
-import SwapiQuery from "./components/pages/SwapiQuery";
+import weatherWidget from "./components/pages/Weather";
+import swapiQuery from "./components/pages/SwapiQuery";
 import Map from "./components/pages/Map";
+import imageDisplayer from "./components/pages/Image";
 
 function App() {
   return (
@@ -48,11 +48,11 @@ function App() {
         <Switch>
           <Route exact path="/" render={Home} />
           <Route path="/about" component={aboutPage} />
-          <Route path="/weather" component={WeatherWidget} />
-          <Route path="/swapi" component={SwapiQuery} />
+          <Route path="/weather" component={weatherWidget} />
+          <Route path="/swapi" component={swapiQuery} />
           <Route path="/map" component={Map} />
-          {/* <Route path="/widgtwo" component={WidgetTwo}/>
-          <Route path="/widgthree" component={WidgetThree}/> */}
+          <Route path="/image" component={imageDisplayer} />
+          {/* <Route path="/widgthree" component={WidgetThree}/> */}
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
