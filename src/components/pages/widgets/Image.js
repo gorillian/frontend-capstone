@@ -5,7 +5,7 @@ const FileUploader = (props) => {
   const [isImage, setIsImage] = useState(false);
   const hiddenInput = React.useRef(null);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     hiddenInput.current.click();
   };
 
