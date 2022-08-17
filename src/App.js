@@ -28,34 +28,37 @@
 // Utilize the internet!
 // Don't limit yourselves.
 // HAVE FUN!!!
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+
+import Home from "./components/nav/Home";
+import LoginContainer from "./components/auth/LoginContainer";
 
 import NavBar from "./components/nav/NavBar";
 import aboutPage from "./components/pages/AboutPage";
-import Home from "./components/nav/Home";
 import NotFound from "./components/pages/NotFound";
-import weatherWidget from "./components/pages/Weather";
-import swapiQuery from "./components/pages/SwapiQuery";
-import Map from "./components/pages/Map";
-import imageDisplayer from "./components/pages/Image";
+import WeatherWidget from "./components/pages/widgets/Weather";
+import SwapiQuery from "./components/pages/widgets/SwapiQuery";
+import Map from "./components/pages/widgets/Map";
+import imageDisplayer from "./components/pages/widgets/Image";
+import { StandardUser } from "./components/core/userRoles";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Route path="/" component={LoginContainer} />
+      <StandardUser withRedirect>
         <Route path="*" component={NavBar} />
-
         <Switch>
-          <Route exact path="/" render={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={aboutPage} />
-          <Route path="/weather" component={weatherWidget} />
-          <Route path="/swapi" component={swapiQuery} />
+          <Route path="/weather" component={WeatherWidget} />
+          <Route path="/swapi" component={SwapiQuery} />
           <Route path="/map" component={Map} />
           <Route path="/image" component={imageDisplayer} />
           {/* <Route path="/widgthree" component={WidgetThree}/> */}
           <Route component={NotFound} />
         </Switch>
-      </BrowserRouter>
+      </StandardUser>
     </div>
   );
 }

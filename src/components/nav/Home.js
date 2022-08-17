@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import map from "../../images/map.jpg";
 import photos from "../../images/photos.jpg";
 import starwars from "../../images/starwars.jpg";
-import weather from "../../images/weather.jpg";
+import cloudygreen from "../../images/cloudygreen.jpg";
 
 export default function Home() {
   return (
@@ -14,54 +14,46 @@ export default function Home() {
       <div className="widget-grid">
         <div className="one">
           <Link to="/weather">
-            <div className="nav-card">
-              <h3
-                style={{
-                  backgroundImage: `url(${weather})`,
-                }}
-              >
-                Weather
-              </h3>
-            </div>
+            <h3
+              style={{
+                backgroundImage: `url(${cloudygreen})`,
+              }}
+            >
+              Weather
+            </h3>
           </Link>
         </div>
         <div className="two">
           <Link to="/swapi">
-            <div className="nav-card">
-              <h3
-                style={{
-                  backgroundImage: `url(${starwars})`,
-                }}
-              >
-                SWAPI
-              </h3>
-            </div>
+            <h3
+              style={{
+                backgroundImage: `url(${starwars})`,
+              }}
+            >
+              SWAPI
+            </h3>
           </Link>
         </div>
         <div className="three">
           <Link to="/map">
-            <div className="nav-card">
-              <h3
-                style={{
-                  backgroundImage: `url(${map})`,
-                }}
-              >
-                Map
-              </h3>
-            </div>
+            <h3
+              style={{
+                backgroundImage: `url(${map})`,
+              }}
+            >
+              Map
+            </h3>
           </Link>
         </div>
         <div className="four">
           <Link to="/image">
-            <div className="nav-card">
-              <h3
-                style={{
-                  backgroundImage: `url(${photos})`,
-                }}
-              >
-                Images
-              </h3>
-            </div>
+            <h3
+              style={{
+                backgroundImage: `url(${photos})`,
+              }}
+            >
+              Images
+            </h3>
           </Link>
         </div>
         {/* <Link to="/widgthree">Third</Link> */}

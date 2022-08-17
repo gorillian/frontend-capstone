@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default (props) => {
+export default function NotFound(props) {
   const [countDown, setCountDown] = useState(5);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ export default (props) => {
       </h4>
     </div>
   );
-};
+}
