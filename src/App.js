@@ -39,6 +39,7 @@ import NotFound from "./components/pages/NotFound";
 import WeatherWidget from "./components/pages/widgets/Weather";
 import SwapiQuery from "./components/pages/widgets/SwapiQuery";
 import Map from "./components/pages/widgets/Map";
+import DiceRoller from "./components/pages/widgets/DiceRoller";
 import imageDisplayer from "./components/pages/widgets/Image";
 import { StandardUser } from "./components/core/userRoles";
 
@@ -55,7 +56,7 @@ function App() {
           <Route path="/swapi" component={SwapiQuery} />
           <Route path="/map" component={Map} />
           <Route path="/image" component={imageDisplayer} />
-          {/* <Route path="/widgthree" component={WidgetThree}/> */}
+          <Route path="/dice" component={DiceRoller} />
           <Route component={NotFound} />
         </Switch>
       </StandardUser>

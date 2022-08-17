@@ -6,7 +6,7 @@ export default function SwapiQuery(props) {
   const handleOnChange = (e) => {
     setPathname(e.target.value);
   };
-  function renderData() {
+  function swapiData() {
     return data.map((item) => {
       return (
         <div key={item.uid} className="swapi-data-wrapper">
@@ -27,7 +27,7 @@ export default function SwapiQuery(props) {
       .catch((err) => console.error("Fetch Swapi Error: ", err));
   }, [pathname]);
   return (
-    <div>
+    <div className="swapi-widget-wrapper">
       <h1>Star Wars API</h1>
       <select value={pathname} onChange={handleOnChange} className="dropdown">
         <option value="people">People</option>
@@ -35,7 +35,7 @@ export default function SwapiQuery(props) {
         <option value="species">Species</option>
         <option value="starships">Ships</option>
       </select>
-      {isLoading ? <div>... Loading</div> : <div>{renderData()}</div>}
+      {isLoading ? <div>... Loading</div> : <div>{swapiData()}</div>}
 
       <div>
         <button onClick={() => props.history.push("../")}>Go Back</button>

@@ -121,6 +121,106 @@ a {
     }
   }
 }
+
+.swapi-widget-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  .dropdown {
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: 700;
+    height: 25px;
+    width: 150px;
+    text-shadow: none;
+    outline: none;
+    margin-bottom: 5px;
+  }
+  .swapi-data-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+}
+
+.dice-widget-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dice-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100vw;
+
+    .red {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+
+      .displayed-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 300px;
+        font-size: 100px;
+        color: white;
+        background-color: red;
+        border: darkred dotted 2px;
+      }
+    }
+
+    .green {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+
+      .displayed-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 300px;
+        font-size: 100px;
+        color: white;
+        background-color: green;
+        border: darkgreen dotted 2px;
+      }
+    }
+
+    .blue {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+
+      .displayed-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 300px;
+        font-size: 100px;
+        color: white;
+        background-color: blue;
+        border: darkblue dotted 2px;
+      }
+    }
+  }
+}
+
 .weather-widget-wrapper {
   display: flex;
   flex-direction: column;

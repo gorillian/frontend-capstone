@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import GoogleMapReact from "google-map-react";
 
-const API_KEY = process.env.REACT_APP_LOCATION_API_KEY;
+const API_KEY = "AIzaSyC-IfyIdEBPwEMrBwTUU36nlr5QGT4d3dQ";
 export default function Map(props) {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
@@ -13,11 +13,12 @@ export default function Map(props) {
     let arrayAddress = address.split(" ");
     let joinedAddress = arrayAddress.join("+");
     let mapLocation = `https://maps.googleapis.com/maps/api/geocode/json?address=${joinedAddress},+${city},+${state}+${zip}&key=${API_KEY}`;
-
+    console.log(mapLocation);
     return mapLocation;
   }, [address, city, state, zip]);
 
   const coordinateGrab = () => {
+    console.log(geoLocation);
     fetch(geoLocation)
       .then((res) => res.json())
       .then((data) => {
@@ -27,7 +28,6 @@ export default function Map(props) {
   };
 
   return (
-    // console.log(address),
     <div>
       <div>
         <h1>Map</h1>

@@ -4,6 +4,7 @@ import map from "../../images/map.jpg";
 import photos from "../../images/photos.jpg";
 import starwars from "../../images/starwars.jpg";
 import cloudygreen from "../../images/cloudygreen.jpg";
+import dice from "../../images/dice.jpg";
 
 export default function Home() {
   return (
@@ -56,7 +57,17 @@ export default function Home() {
             </h3>
           </Link>
         </div>
-        {/* <Link to="/widgthree">Third</Link> */}
+        <div className="five">
+          <Link to="/dice">
+            <h3
+              style={{
+                backgroundImage: `url(${dice})`,
+              }}
+            >
+              Dice Roller
+            </h3>
+          </Link>
+        </div>
       </div>
     </div>
   );
