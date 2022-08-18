@@ -220,6 +220,27 @@ a {
     }
   }
 }
+.map-widget-wrapper {
+  display: flex;
+  align-items: center;
+  width: 95vw;
+  height: 95vh;
+  margin-left: 5vw;
+  .user-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    .back-button {
+      margin-top: 100px;
+    }
+  }
+  .map-render {
+    height: 95vh;
+    width: 95vw;
+    border-left: 3px solid black;
+  }
+}
 
 .weather-widget-wrapper {
   display: flex;

@@ -6,20 +6,17 @@ export default function Map(props) {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
   const [location, setLocation] = useState([]);
 
-  const geoLocation = useMemo(() => {
+  const getCoordinates = useMemo(() => {
     let arrayAddress = address.split(" ");
     let joinedAddress = arrayAddress.join("+");
-    let mapLocation = `https://maps.googleapis.com/maps/api/geocode/json?address=${joinedAddress},+${city},+${state}+${zip}&key=${API_KEY}`;
-    console.log(mapLocation);
-    return mapLocation;
-  }, [address, city, state, zip]);
+    let fullAddress = `https://maps.googleapis.com/maps/api/geocode/json?address=${joinedAddress},+${city},+${state}&key=${API_KEY}`;
+    return fullAddress;
+  }, [address, city, state]);
 
   const coordinateGrab = () => {
-    console.log(geoLocation);
-    fetch(geoLocation)
+    fetch(getCoordinates)
       .then((res) => res.json())
       .then((data) => {
         setLocation(data.results);
@@ -28,11 +25,11 @@ export default function Map(props) {
   };
 
   return (
-    <div>
+    <div className="map-widget-wrapper">
       <div>
         <h1>Map</h1>
       </div>
-      <div className="input-wrapper">
+      <div className="user-input-wrapper">
         <label>Address</label>
         <input
           type="text"
@@ -51,37 +48,26 @@ export default function Map(props) {
           value={state}
           onChange={(e) => setState(e.target.value)}
         ></input>
-        <label>ZIP Code</label>
-        <input
-          type="text"
-          value={zip}
-          onChange={(e) => setZip(e.target.value)}
-        ></input>
-        <div>
-          <button onClick={coordinateGrab}>Submit</button>
-          <div>
-            {" "}
-            {location.length > 0 ? (
-              <GoogleMapReact
-                bootstrapURLKeys={{
-                  key: API_KEY,
-                }}
-                center={location[0].geometry.location}
-                defaultZoom={15}
-              >
-                {/* <MapMarker
-                  lat={location[0].geometry.location.lat}
-                  lng={location[0].geometry.location.lng}
-                /> */}
-              </GoogleMapReact>
-            ) : (
-              <div className="empty-map-wrapper">this empty bruddah</div>
-            )}
-          </div>
+        <button onClick={coordinateGrab} className="submit-map">
+          Submit
+        </button>
+        <div className="back-button">
+          <button onClick={() => props.history.push("../")}>Go Back</button>
         </div>
       </div>
-      <div>
-        <button onClick={() => props.history.push("../")}>Go Back</button>
+      <div className="map-render">
+        {" "}
+        {location.length > 0 ? (
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: API_KEY,
+            }}
+            center={location[0].geometry.location}
+            defaultZoom={15}
+          ></GoogleMapReact>
+        ) : (
+          <div className="empty-map-wrapper">Your Map Will Display Here</div>
+        )}
       </div>
     </div>
   );
